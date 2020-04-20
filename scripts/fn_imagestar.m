@@ -11,7 +11,7 @@ function fn_imagestar(images_len, epsilons_len)
         results.verify = [];
         results.time = [];
         for j = 0:images_len-1
-            path = ['../logs/zonotope_inputs',num2str(0),'/','input_',num2str(j)];
+            path = ['../logs/zonotope_inputs',num2str(i),'/','input_',num2str(j)];
             struct = importdata(path,' ',1);
             data = struct.data';
             if size(data,1)==1
