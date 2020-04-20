@@ -21,8 +21,8 @@ function fn_imagestar(images_len, epsilons_len)
             V = reshape_images(data);
 
             generator_num = size(V,4)-1;
-            C = repmat([1;-1],1,generator_num);
-            d = [1;1];
+            C = [eye(generator_num);-eye(generator_num)];
+            d = ones(2*generator_num,1);
             pred_lb = -ones(generator_num,1);
             pred_ub = ones(generator_num,1);
             IS = ImageStar(V, C, d, pred_lb, pred_ub);
